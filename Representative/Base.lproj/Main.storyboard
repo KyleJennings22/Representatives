@@ -64,68 +64,72 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="cS6-bE-bYg">
-                                            <rect key="frame" x="30" y="21" width="374" height="72"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VAI-86-s3c">
+                                            <rect key="frame" x="10" y="10" width="394" height="94"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Sn3-Pu-tRr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="179" height="72"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="nG6-MQ-Kfw">
+                                                    <rect key="frame" x="0.0" y="11.5" width="197" height="71.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keK-J9-djj">
-                                                            <rect key="frame" x="0.0" y="0.0" width="179" height="17.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="197" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(party)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9Z-cf-CXu">
-                                                            <rect key="frame" x="0.0" y="27.5" width="179" height="17"/>
+                                                            <rect key="frame" x="0.0" y="25.5" width="197" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(district)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7h-nC-MFr">
-                                                            <rect key="frame" x="0.0" y="54.5" width="179" height="17.5"/>
+                                                            <rect key="frame" x="0.0" y="51" width="197" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XuI-ej-5a4">
-                                                    <rect key="frame" x="179" y="0.0" width="195" height="72"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qKk-PN-MTZ">
+                                                    <rect key="frame" x="197" y="20.5" width="197" height="53"/>
                                                     <subviews>
-                                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(phone#)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIK-dl-Jr2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="195" height="28"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(website)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTj-qD-vWq">
-                                                            <rect key="frame" x="0.0" y="48" width="195" height="24"/>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="(phone)" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="N7l-7T-aU7">
+                                                            <rect key="frame" x="0.0" y="0.0" width="197" height="24"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                                                        </textView>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="(website)" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="PIs-py-fFj">
+                                                            <rect key="frame" x="0.0" y="29" width="197" height="24"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="24" id="r86-en-orz"/>
+                                                                <constraint firstAttribute="height" constant="24" id="iSc-8O-2xW"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                        </textView>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="cS6-bE-bYg" firstAttribute="trailing" secondItem="GH3-e7-j0S" secondAttribute="trailingMargin" constant="10" id="MYF-RW-lOt"/>
-                                        <constraint firstItem="cS6-bE-bYg" firstAttribute="leading" secondItem="GH3-e7-j0S" secondAttribute="leadingMargin" constant="10" id="qlL-fy-Dkm"/>
-                                        <constraint firstItem="cS6-bE-bYg" firstAttribute="top" secondItem="GH3-e7-j0S" secondAttribute="topMargin" constant="10" id="qnA-mb-KV9"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="cS6-bE-bYg" secondAttribute="bottom" constant="10" id="v7m-oU-c0T"/>
+                                        <constraint firstAttribute="trailing" secondItem="VAI-86-s3c" secondAttribute="trailing" constant="10" id="KAh-EO-R5U"/>
+                                        <constraint firstItem="VAI-86-s3c" firstAttribute="top" secondItem="GH3-e7-j0S" secondAttribute="top" constant="10" id="PZj-rv-rcq"/>
+                                        <constraint firstAttribute="bottom" secondItem="VAI-86-s3c" secondAttribute="bottom" constant="10" id="qS7-7c-3rQ"/>
+                                        <constraint firstItem="VAI-86-s3c" firstAttribute="leading" secondItem="GH3-e7-j0S" secondAttribute="leading" constant="10" id="vUC-XU-yaf"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="repDistrictLabel" destination="n7h-nC-MFr" id="2Ed-c7-dve"/>
                                     <outlet property="repNameLabel" destination="keK-J9-djj" id="p1l-gx-Hg2"/>
                                     <outlet property="repPartyLabel" destination="i9Z-cf-CXu" id="uMp-Np-J1q"/>
-                                    <outlet property="repPhoneLabel" destination="mIK-dl-Jr2" id="FiF-Kl-HrX"/>
-                                    <outlet property="repWebsiteLabel" destination="NTj-qD-vWq" id="Qcl-BB-bPR"/>
+                                    <outlet property="repPhoneTextView" destination="N7l-7T-aU7" id="vTf-KK-i7v"/>
+                                    <outlet property="repWebsiteTextView" destination="PIs-py-fFj" id="oqJ-Jj-D5i"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

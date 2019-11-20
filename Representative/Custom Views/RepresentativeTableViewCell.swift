@@ -13,8 +13,9 @@ class RepresentativeTableViewCell: UITableViewCell {
     @IBOutlet weak var repNameLabel: UILabel!
     @IBOutlet weak var repPartyLabel: UILabel!
     @IBOutlet weak var repDistrictLabel: UILabel!
-    @IBOutlet weak var repPhoneLabel: UILabel!
-    @IBOutlet weak var repWebsiteLabel: UILabel!
+    @IBOutlet weak var repPhoneTextView: UITextView!
+    @IBOutlet weak var repWebsiteTextView: UITextView!
+    
     
     var representative: Representative? {
         didSet {
@@ -27,7 +28,7 @@ class RepresentativeTableViewCell: UITableViewCell {
         repNameLabel.text = rep.name
         repPartyLabel.text = rep.party
         repDistrictLabel.text = "District \(rep.district)"
-        repPhoneLabel.text = rep.phone
-        repWebsiteLabel.text = rep.link
+        repPhoneTextView.text = rep.phone
+        repWebsiteTextView.text = rep.link
     }
 }
