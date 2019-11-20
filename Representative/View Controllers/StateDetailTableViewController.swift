@@ -22,23 +22,37 @@ class StateDetailTableViewController: UITableViewController {
     }
     
     var state: String?
+    var zip: String?
     
     // MARK: - LIFECYCLE FUNCTIONS
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let state = state else {return}
-        RepresentativeController.searchRepresentatives(forState: state) { (reps) in
-            if !reps.isEmpty {
-                self.representatives = reps
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } else {
-                DispatchQueue.main.async {
-                    self.presentAlertController()
+        if let state = state {
+            RepresentativeController.searchRepresentatives(forState: state) { (reps) in
+                if !reps.isEmpty {
+                    self.representatives = reps
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.presentAlertController()
+                    }
                 }
             }
-            
+        } else if let zip = zip {
+            RepresentativeController.searchRepresentativesForZip(zipcode: zip) { (reps) in
+                if !reps.isEmpty {
+                    self.representatives = reps
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.presentAlertController()
+                    }
+                }
+            }
         }
     }
 

@@ -42,7 +42,16 @@
                             <outlet property="delegate" destination="HKF-qE-eMd" id="5ZI-yM-tCC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="States" id="gns-Ev-sWl"/>
+                    <navigationItem key="navigationItem" title="States" id="gns-Ev-sWl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="EAF-as-59K">
+                            <connections>
+                                <action selector="searchButtonTapped:" destination="HKF-qE-eMd" id="yKo-Ga-TLg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="lcb-wI-YWt" kind="show" identifier="zipToReps" id="sTL-fG-VAt"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rhE-Em-feg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,4 +170,7 @@
             <point key="canvasLocation" x="-650" y="144"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="sTL-fG-VAt"/>
+    </inferredMetricsTieBreakers>
 </document>

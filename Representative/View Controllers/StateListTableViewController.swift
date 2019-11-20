@@ -10,9 +10,18 @@ import UIKit
 
 class StateListTableViewController: UITableViewController {
 
+    // MARK: - VARIABLES
+    var zip = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // MARK: - ACTIONS
+    @IBAction func searchButtonTapped(_ sender: UIBarButtonItem) {
+        zipcodeAlert()
+    }
+    
 
     // MARK: - Table view data source
 
@@ -32,44 +41,7 @@ class StateListTableViewController: UITableViewController {
         
         return cell
     }
-    
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -78,8 +50,25 @@ class StateListTableViewController: UITableViewController {
             guard let indexPath = tableView.indexPathForSelectedRow,
                 let destinationVC = segue.destination as? StateDetailTableViewController else {return}
             destinationVC.state = States.all[indexPath.row]
+        } else if segue.identifier == "zipToReps" {
+            guard let destinationVC = segue.destination as? StateDetailTableViewController else {return}
+            destinationVC.zip = zip
         }
     }
     
-
+    // MARK: - CUSTOM FUNCTIONS
+    func zipcodeAlert() {
+        let alert = UIAlertController(title: "Search By Zip", message: "Search for Reps using your Zip", preferredStyle: .alert)
+        alert.addTextField(configurationHandler: nil)
+        let searchAction = UIAlertAction(title: "Search", style: .default) { (_) in
+            guard let zipcode = alert.textFields?[0].text, !zipcode.isEmpty else {return}
+            self.zip = zipcode
+            self.performSegue(withIdentifier: "zipToReps", sender: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(searchAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+        
+    }
 }
